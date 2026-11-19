@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For dearest Lyla</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="page">
+
+  <header>
+    <h1>Yang terkasih <span id="nama"> </span>,<br> :p </h1>
+    <p class="lede"> Theres 6 flowers u can pick hehe, coba di petik satu satu ya sayaang.</p>
+  </header>
+
+  <div class="stage">
+
+    <section class="panel" aria-label=" ur bucket :p hehe">
+      <div class="bouquet" id="bouquet">
+        <svg class="cone" viewBox="0 0 190 120" aria-hidden="true">
+          <path class="wrap-fill" d="M4 6L186 6L104 114Q95 122 86 114Z"/>
+          <path class="fold" d="M62 6L91 108M128 6L99 108"/>
+          <path class="band" d="M27 36L163 36L153 50L37 50Z"/>
+          <circle class="bow" cx="84" cy="43" r="9"/>
+          <circle class="bow" cx="106" cy="43" r="9"/>
+          <circle class="bow" cx="95" cy="43" r="5"/>
+          <path class="wrap-line" d="M4 6L186 6L104 114Q95 122 86 114Z"/>
+        </svg>
+      
+        <button class="duck" id="duck" type="button" aria-label="Si bebek. Ketuk supaya dia bunyi">
+          <span class="duck-say" aria-hidden="true">kwek!</span>
+        </button>
+      </div>
+      <p class="count" id="count" aria-live="polite"> Fill up ur bucket, cantikku</p>
+    </section>
+
+    <!-- TAMAN -->
+    <section class="panel garden" aria-label="Taman bunga">
+      <div class="beds" id="garden"></div>
+      <p class="hint">Klik bunganya sayaang.</p>
+    </section>
+
+  </div>
+
+  <!-- AMPLOP (muncul setelah semua bunga dipetik) -->
+  <section class="env-box" id="envBox" hidden>
+    <p class="env-note">Therreessss another one for u hehe. Click it :].</p>
+    <button class="envelope" id="envelope" type="button" aria-label="Buka amplop">
+      <span class="env-back"></span>
+      <span class="env-letter">Untukmu</span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="env-seal"></span>
+    </button>
+    <button class="again" id="again" type="button" hidden>Mau petik lagi ?</button>
+  </section>
+
+</main>
+
+<!-- KOTAK PESAN (muncul setiap kali bunga dipetik) -->
+<dialog id="dlg" aria-labelledby="dlgLabel">
+  <div class="dlg-art" id="dlgArt"></div>
+  <p class="dlg-label" id="dlgLabel"></p>
+  <p class="dlg-text" id="dlgText"></p>
+  <form method="dialog"><button class="btn" autofocus>Oke</button></form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

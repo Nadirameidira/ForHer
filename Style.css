@@ -1,0 +1,233 @@
+
+:root {
+  --bg: #e6e0c0;
+  --paper: #f3f6ea;
+  --ink: #633806;
+  --muted: #735b3a;
+  --leaf: #3b5f42;
+  --leaf-fill: #5e9a58;
+  --soil: #7a5a3f;
+  --wrap: #d2b48a;
+  --poppy: #d9452d;
+  --pink: #e4789a;
+  --yellow: #efb92d;
+  --brown: #6b4325;
+  --env-back: #d9b98c;
+  --env-front: #ebd2a8;
+  --env-flap: #dfc08f;
+
+  /* warna bunga */
+  --rose: #c9304f;
+  --rose2: #e0657d;
+  --hyd1: #6f8fd8;
+  --hyd2: #9a86d6;
+  --hyd3: #8fb6e8;
+  --clover: #4c9a4f;
+  --clover2: #68ae5a;
+  --iris: #6a57c2;
+  --iris2: #9482de;
+  --lily: #f9e3ea;
+  --lily2: #ec93ae;
+
+  /* warna bebek */
+  --duck: #f7c825;
+  --duck2: #f0b81c;
+  --beak: #ef8a22;
+
+  --display: "Gaegu", "Comic Sans MS", "Segoe Print", cursive;
+  --text: "Patrick Hand", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #362b06; --paper: #322c1e; --ink: #e9efe0; --muted: #a9bba9;
+    --leaf: #6fa66b; --leaf-fill: #4f8a55; --soil: #3b2d23; --wrap: #a58664;
+    --poppy: #f0644a; --pink: #f29bb6; --yellow: #f5cb57; --brown: #8a5a33;
+    --env-back: #a98a5f; --env-front: #c4a676; --env-flap: #b59769;
+    --rose: #e65776; --rose2: #f58aa0;
+    --hyd1: #7f9fe6; --hyd2: #ab98e6; --hyd3: #9cc2f2;
+    --clover: #5fb062; --clover2: #7bc16d;
+    --iris: #8c79dc; --iris2: #a898ee;
+    --lily: #f6dfe6; --lily2: #f09db7;
+    --duck: #f9d24a; --duck2: #f2c43b; --beak: #f59a3a;
+  }
+}
+
+/* ============ DASAR ============ */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  padding: clamp(20px, 5vw, 48px) max(16px, env(safe-area-inset-right, 0px)) clamp(32px, 6vw, 64px) max(16px, env(safe-area-inset-left, 0px));
+}
+.page { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(24px, 5vw, 44px); }
+h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.3rem, 8vw, 3.9rem);
+  line-height: 1.05;
+  margin: 0;
+  text-wrap: balance;
+}
+.lede { margin: 10px 0 0; color: var(--muted); max-width: 34em; }
+
+/* Di HP: buket di atas, taman di bawah. Di layar lebar: taman kiri, buket kanan. */
+.stage { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+.panel { background: var(--paper); border-radius: 10px 24px 12px 20px; padding: 18px 14px 14px; min-width: 0; }
+@media (min-width: 760px) {
+  .stage { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .garden { order: -1; }
+}
+
+/* ============ GAMBAR BUNGA & BEBEK ============ */
+.pf { stroke: none; }
+.po { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.po.fine { stroke-width: 1; }
+.vein { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; opacity: 0.35; vector-effect: non-scaling-stroke; }
+.stamen { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.c-yellow { fill: var(--yellow); }
+.c-brown { fill: var(--brown); }
+.c-leaf { fill: var(--leaf-fill); }
+.c-rose { fill: var(--rose); }
+.c-rose2 { fill: var(--rose2); }
+.c-hyd1 { fill: var(--hyd1); }
+.c-hyd2 { fill: var(--hyd2); }
+.c-hyd3 { fill: var(--hyd3); }
+.c-clover { fill: var(--clover); }
+.c-clover2 { fill: var(--clover2); }
+.c-iris { fill: var(--iris); }
+.c-iris2 { fill: var(--iris2); }
+.c-lily { fill: var(--lily); }
+.c-lily2 { fill: var(--lily2); }
+.c-duck { fill: var(--duck); }
+.c-duck2 { fill: var(--duck2); }
+.c-beak { fill: var(--beak); }
+.eye { fill: var(--ink); }
+.blush { fill: var(--pink); opacity: 0.55; }
+.dot { fill: var(--ink); opacity: 0.5; }
+.stem { fill: none; stroke: var(--leaf); stroke-width: 3.4; stroke-linecap: round; }
+
+/* ============ TAMAN ============ */
+.beds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 4px; }
+.cell { position: relative; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
+/* gundukan tanah */
+.cell::after {
+  content: ""; position: absolute; left: 10%; right: 10%; bottom: 0; height: 18px; z-index: 1;
+  background: var(--soil); border: 1.6px solid var(--ink); border-radius: 50%;
+}
+.plant {
+  display: block; width: 100%; max-width: 120px; padding: 0; border: 0; background: none; cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s;
+}
+.plant:hover { transform: translateY(-3px); }
+.plant:focus-visible { outline: 3px solid var(--poppy); outline-offset: 2px; border-radius: 8px; }
+.plant svg { display: block; width: 100%; height: auto; overflow: visible; transform-origin: 50% 100%; animation: sway var(--dur, 5s) ease-in-out var(--d, 0s) infinite; }
+@keyframes sway { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+/* bunga yang sudah dipetik: terangkat lalu hilang */
+.plant.gone { transform: translateY(-40px) rotate(8deg) scale(0.9); opacity: 0; visibility: hidden; pointer-events: none; transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s; }
+.hint { margin: 10px 4px 0; text-align: center; font-size: 1.05rem; color: var(--muted); }
+
+/* ============ BUKET ============ */
+.bouquet { position: relative; width: min(300px, 100%); height: 290px; margin: 0 auto; }
+.bq-flower {
+  position: absolute; left: 50%; bottom: 70px; width: 100px; height: 170px; margin-left: -50px;
+  transform-origin: 50% 100%;
+  transform: rotate(var(--a)) scale(var(--s));
+  animation: pop 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.bq-flower svg { display: block; width: 100%; height: 100%; overflow: visible; }
+@keyframes pop { from { transform: rotate(var(--a)) scale(0); } to { transform: rotate(var(--a)) scale(var(--s)); } }
+.cone { position: absolute; left: 50%; bottom: 0; width: 190px; height: 120px; margin-left: -95px; z-index: 20; }
+.wrap-fill { fill: var(--wrap); }
+.wrap-line, .band, .bow { stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+.wrap-line { fill: none; }
+.band, .bow { fill: var(--poppy); }
+.fold { fill: none; stroke: var(--ink); stroke-width: 1.2; opacity: 0.35; }
+.count { margin: 8px 0 0; text-align: center; font-family: var(--display); font-size: 1.25rem; }
+
+/* ============ BEBEK ============ */
+.duck {
+  position: absolute; right: 0; bottom: 0; z-index: 25;
+  width: 78px; height: 72px; padding: 0; border: 0; background: none; cursor: pointer;
+}
+.duck svg { display: block; width: 100%; height: 100%; overflow: visible; transform-origin: 50% 100%; animation: bob 3.2s ease-in-out infinite; }
+.duck:focus-visible { outline: 3px solid var(--poppy); outline-offset: 2px; border-radius: 10px; }
+.duck.hop { animation: hop 0.6s ease; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes hop {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  35% { transform: translateY(-16px) rotate(-6deg); }
+  65% { transform: translateY(-4px) rotate(4deg); }
+}
+.duck-say {
+  position: absolute; left: 50%; bottom: 100%; white-space: nowrap; pointer-events: none;
+  background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 10px 14px 10px 6px;
+  padding: 0 10px; font-family: var(--display); font-size: 1.25rem; line-height: 1.5;
+  opacity: 0; transform: translate(-50%, 6px) scale(0.8); transition: opacity 0.15s, transform 0.15s;
+}
+.duck.say .duck-say { opacity: 1; transform: translate(-50%, -2px) scale(1); }
+
+/* ============ AMPLOP ============ */
+.env-box { display: flex; flex-direction: column; align-items: center; gap: 16px; animation: rise 0.5s ease both; }
+.env-box[hidden] { display: none; }
+.env-note { margin: 0; font-family: var(--display); font-size: 1.35rem; text-align: center; }
+.envelope {
+  position: relative; width: min(280px, 78vw); aspect-ratio: 3 / 2; margin-top: 100px;
+  padding: 0; border: 0; background: none; cursor: pointer; perspective: 700px;
+  animation: wiggle 3s ease-in-out infinite;
+}
+.envelope.open { animation: none; cursor: default; }
+@keyframes wiggle { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+.envelope > span { position: absolute; display: block; }
+.env-back { inset: 0; background: var(--env-back); border: 2px solid var(--ink); border-radius: 6px; }
+.env-letter {
+  left: 9%; right: 9%; top: 9%; bottom: 9%; z-index: 1;
+  background: var(--paper); border: 2px solid var(--ink);
+  display: flex; justify-content: center; padding-top: 10px;
+  font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--ink);
+  transition: transform 0.7s 0.35s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+.env-front {
+  inset: 0; z-index: 2; background: var(--env-front); border: 2px solid var(--ink); border-radius: 6px;
+  clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+}
+.env-flap {
+  left: 0; top: 0; width: 100%; height: 52%; z-index: 3; background: var(--env-flap);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0; transition: transform 0.5s ease;
+}
+.env-seal {
+  left: 50%; top: 52%; width: 32px; height: 32px; margin: -16px 0 0 -16px; z-index: 4;
+  border-radius: 50%; background: var(--poppy); border: 2px solid var(--ink);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.envelope.open .env-flap { transform: rotateX(180deg); z-index: 0; transition: transform 0.5s ease, z-index 0s 0.25s; }
+.envelope.open .env-letter { transform: translateY(-62%); }
+.envelope.open .env-seal { opacity: 0; transform: scale(0.4); }
+.envelope:focus-visible { outline: 3px solid var(--poppy); outline-offset: 6px; }
+
+.again, .btn {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  background: var(--ink); color: var(--bg); border: 0; border-radius: 12px 6px 10px 8px; padding: 9px 18px;
+}
+.again[hidden] { display: none; }
+.again:focus-visible, .btn:focus-visible { outline: 3px solid var(--poppy); outline-offset: 3px; }
+
+dialog {
+  width: min(380px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto;
+  padding: 24px 22px 20px; background: var(--paper); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 10px 22px 12px 18px;
+}
+dialog[open] { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; animation: rise 0.3s ease both; }
+dialog::backdrop { background: rgba(15, 30, 20, 0.55); }
+.dlg-art svg { display: block; width: 72px; height: auto; overflow: visible; }
+.dlg-label { margin: 0; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.dlg-text { margin: 0; font-family: var(--display); font-size: 1.5rem; line-height: 1.45; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

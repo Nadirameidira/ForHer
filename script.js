@@ -1,8 +1,8 @@
 const NAMA = "Lyla";
 
 const PESAN = [
-  "Kamu selalu berusaha untuk overcome ur feera, and thats the thing I admire most about you.",
-  "Thank u for always being there dor me, walaupun aku sangat amat sibuk terkdang.",
+  "Kamu selalu berusaha untuk overcome ur feer, and thats the thing I admire most about you.",
+  "Thank u for always being there for me, main roblox, nonton bareng, or even when we just being thoughful alias berkonspirasi, saling ngomongin funfacts dan lain-lainnya, I love u so much",
   "Kakak, sellau suka sam semua hadiah dari kamu, si bebek dan si orang kunning itu, lucu sekali..",
   "I always  find you in evrything I see, and I always think about you when I see flowers",
   "Lyla, sayaang. Apapun yang kamu hadapi nanti, kak selalu doakann yang terbaik untuk mu dari sini.",
@@ -141,7 +141,7 @@ const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau m
 
   function duckSVG() {
     return '<svg viewBox="0 0 92 84" aria-hidden="true" focusable="false">' +
-      shape("M14 48C10 44 6 40 4 32C12 33 19 38 24 43Z", "c-duck") +
+      shape("M14 48C11 44 6 40 4 32C12 33 19 38 24 43Z", "c-duck") +
       shape("M10 58C10 44 24 38 42 38C60 38 76 46 76 60C76 72 60 80 42 80C24 80 10 72 10 58Z", "c-duck") +
       shape("M28 60C32 50 46 50 54 58C48 68 34 69 28 60Z", "c-duck2") +
       shape("M39 28a19 19 0 1 0 38 0a19 19 0 1 0 -38 0Z", "c-duck") +

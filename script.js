@@ -154,7 +154,7 @@ const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau m
   duck.insertAdjacentHTML("afterbegin", duckSVG());
   let sayTimer;
   
-  const audioKwek = new Audio('kwek.mp3'); 
+  const audioKwek = new Audio('kwek.wav'); 
 
   function squeak() {
     audioKwek.currentTime = 0;

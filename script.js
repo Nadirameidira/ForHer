@@ -3,13 +3,13 @@ const NAMA = "Lyla";
 const PESAN = [
   "Kamu selalu berusaha untuk overcome ur feer, and thats the thing I admire most about you.",
   "Thank u for always being there for me, main roblox, nonton bareng, or even when we just being thoughful alias berkonspirasi, saling ngomongin funfacts dan lain-lainnya, I love u so much",
-  "Kakak, sellau suka sam semua hadiah dari kamu, si bebek dan si orang kunning itu, lucu sekali..",
-  "I always  find you in evrything I see, and I always think about you when I see flowers",
-  "Lyla, sayaang. Apapun yang kamu hadapi nanti, kak selalu doakann yang terbaik untuk mu dari sini.",
-  "And I hope that you always know that I love you so much."
+  "Kakak, selalu suka sama semua hadiah dari kamu, si bebek dan si orang kuning itu, lucu sekali. I cant stop giggling and smiling about it",
+  "I always  find you in everything I see, and I always think about you when I see flowers, like always. Seperti yang kaka bilang juga sebelumnya, I hope u remember me in some of ur actvity too",
+  "Lyla, sayaang. Apapun yang kamu hadapi nanti, kak selalu doakann yang terbaik untuk mu dari sini",
+  "And I hope that you always know that I love you so much, sayaang"
 ];
 
-const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau menghabiskan waktu kamu bareng kaka, kak sangat amat seneng bisa ketemu kamu, dan  kaka harap kamu juga merasakna hal yang sama, I love you so much sayaang and you'r my [0] in array  fuction HEHE";
+const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau menghabiskan waktu kamu bareng kaka, kak sangat amat seneng bisa ketemu kamu, dan  kaka harap kamu juga merasakna hal yang sama, I love you so much sayaang and you'r my [0] in array function HEHE.";
 
 (function () {
 

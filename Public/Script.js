@@ -10,7 +10,7 @@ const PESAN = [
   "And I hope that you always know that I love you so much."
 ];
 
-const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau menghabiskan waktu kamu bareng kaka, kak sangat amat seneng bisa ketemu kamu, dan  kaka harap kamu juga merasakna hal yang sama, I love you so much sayaang and your' my [0] in array  fuction HEHE";
+const SURAT = "Halo, " + NAMA + ", kaka hanya mau bilang terimakasih sudah mau menghabiskan waktu kamu bareng kaka, kak sangat amat seneng bisa ketemu kamu, dan  kaka harap kamu juga merasakna hal yang sama, I love you so much sayaang and you'r my [0] in array  fuction HEHE";
 (function () {
 
   const TIPE = ["rose", "hydrangea", "sunflower", "clover", "iris", "lily"];
